@@ -5,10 +5,30 @@
   "repository": "https://gitlab.com/jesuslares/genetic-mutation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only ./src/index.ts",
+    "dev:windows": "set NODE_ENV=development && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only ./src/index.ts",
+    "lint": "eslint './src/**/*.ts'",
+    "lint:fix": "eslint './src/**/*.ts' --fix",
+    "clean": "rm -rf coverage src/**/*.js src/**/*.map",
+    "build": "npm run clean -rf ./build && tsc --project ./"
   },
   "keywords": [],
   "author": "Jesus Lares Cotreras",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^17.0.33",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "@typescript-eslint/parser": "6.4.1",
+    "eslint": "8.47.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-import-resolver-typescript": "3.6.0",
+    "eslint-plugin-import": "2.28.1",
+    "prettier": "3.0.2",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "ts-patch": "3.0.2",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^4.6.4",
+    "typescript-transform-paths": "3.4.6"
+  }
 }
