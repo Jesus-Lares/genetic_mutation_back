@@ -16,6 +16,8 @@ module.exports = {
     "no-shadow": "off",
     "linebreak-style": "off",
     "comma-dangle": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
     "class-methods-use-this": "off",
