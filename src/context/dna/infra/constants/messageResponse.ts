@@ -1,0 +1,2 @@
+export const NOT_HAS_MUTATION = "NOT_HAS_MUTATION";
+export const HAS_MUTATION = "HAS_MUTATION";

@@ -3,8 +3,16 @@
     "baseUrl": "./",
     "paths": {
       "@src/*": ["./src/*"],
+      "@context/*": ["./src/context/*"],
+      "@helpers/*": ["./src/core/helpers/*"],
       "@utils/*": ["./src/core/utils/*"],
       "@utils": ["./src/core/utils/index"],
+      "@errors/*": ["./src/core/errors/*"],
+      "@errors": ["./src/core/errors/index"],
+      "@router": ["./src/core/routes/index"],
+      "@constants": ["./src/core/constants/index"],
+      "@types": ["./src/core/types/index"],
+      "@config/*": ["./src/core/config/*"],
       "@mocks/*": ["./__tests__/mocks/*"]
     }
   }

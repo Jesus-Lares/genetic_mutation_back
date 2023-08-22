@@ -1,4 +1,4 @@
-import { areCoordinatesValid, hasMutationInDirection } from "@utils";
+import { areCoordinatesValid, hasMutationInDirection } from "@src/context/dna/infra/utils";
 
 import { dnaWithMutation } from "@mocks/dna";
 
