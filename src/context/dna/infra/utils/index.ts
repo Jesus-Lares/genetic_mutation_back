@@ -1,5 +1,5 @@
+import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "../../domain/params";
 import { defaultPatternLength } from "../constants";
-import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "../types";
 
 /**
  * Verifies if given coordinates are within the valid range of the DNA table.
