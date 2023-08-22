@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@utils/*": ["./src/core/utils/*"],
+      "@utils": ["./src/core/utils/index"],
+      "@mocks/*": ["./__tests__/mocks/*"]
     }
   }
 }
