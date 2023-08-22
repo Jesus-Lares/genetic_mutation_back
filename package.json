@@ -1,0 +1,14 @@
+{
+  "name": "genetic-mutation",
+  "version": "0.0.0",
+  "description": "Genetic Differences Detection Project in DNA Sequence.",
+  "repository": "https://gitlab.com/jesuslares/genetic-mutation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jesus Lares Cotreras",
+  "license": "MIT",
+  "devDependencies": {}
+}
