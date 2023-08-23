@@ -1,4 +1,4 @@
-import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "../../domain/Params";
+import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "@context/dna/domain/Params";
 import { defaultPatternLength } from "../constants";
 
 /**
