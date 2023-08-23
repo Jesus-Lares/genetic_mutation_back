@@ -110,3 +110,4 @@ dist
 
 build/
 db/*
+.env.docker

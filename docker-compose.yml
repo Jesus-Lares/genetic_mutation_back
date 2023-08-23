@@ -5,11 +5,7 @@ services:
     ports:
       - 5432:5432
     env_file:
-      - .env.development
-    environment:
-      - POSTGRES_DB:postgres
-      - POSTGRES_USER:jesuslares
-      - POSTGRES_PASSWORD:j1e2s3u4s5
+      - .env.docker
     volumes:
       - ./db:/var/lib/postgresql/data
 
