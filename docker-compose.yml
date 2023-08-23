@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env.development
+    environment:
+      - POSTGRES_DB:postgres
+      - POSTGRES_USER:jesuslares
+      - POSTGRES_PASSWORD:j1e2s3u4s5
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - 5050:80

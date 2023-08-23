@@ -1,21 +1,29 @@
 /* eslint-disable quotes */
 import request from "supertest";
+import { Sequelize } from "sequelize";
 
 import app from "@src/app";
 import server from "@src/index";
-import { INVALID_DATA } from "@src/core/errors/messages";
+import { clearDataBase, closeDataBase, connectDBTest } from "@config/db/dbTests";
+import { INVALID_DATA } from "@errors/messages";
 
-import { HAS_MUTATION, NOT_HAS_MUTATION } from "@src/context/dna/infra/constants/messageResponse";
+import { HAS_MUTATION, NOT_HAS_MUTATION } from "@context/dna/infra/constants/messageResponse";
 
-import { dnaWithMutation, dnaWithoutMutation, wrongDna } from "@mocks/dna";
+import { dnaWithMutation, dnaWithoutMutation, wrongDna } from "@mocks/constants/dna";
 
 const URL_BASE = "/api/v1/mutation";
 let agent: request.SuperAgentTest;
+let db: Sequelize;
 
-beforeAll(() => {
+beforeAll(async () => {
   agent = request.agent(app);
+  db = await connectDBTest();
+});
+afterEach(async () => {
+  await clearDataBase(db);
 });
 afterAll(async () => {
+  await closeDataBase(db);
   await server.close();
 });
 

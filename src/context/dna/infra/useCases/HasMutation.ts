@@ -3,24 +3,40 @@ import { isValidDNAStrand } from "@helpers/validators";
 import { ErrorData } from "@errors/customErrors";
 import { EMPTY_DATA, INVALID_DATA } from "@errors/messages";
 
-import { hasMutationInDirection } from "../utils";
-import { directions } from "../constants";
+import CreateAdnRecordUseCase from "./CreateAdnRecord";
+import { TypeAlgorithm } from "../../domain/DNA";
+import {
+  hasMutationDirectionalApproach as directionalApproach,
+  hasMutationRegex as regex,
+} from "../utils/algorithm";
+
+interface Params {
+  dna: string[];
+  typeAlgorithm?: TypeAlgorithm;
+}
 
 class HasMutationUseCase {
-  exec(dna: string[]): boolean {
-    const n = dna.length;
+  async exec(params: Params): Promise<boolean> {
+    const { dna = [], typeAlgorithm = "directionalApproach" } = params;
+    this.validParams(dna);
+    const fnAlgorithm = typeAlgorithm === "regex" ? regex : directionalApproach;
+    const isMutation = fnAlgorithm(dna);
+    await this.createDNARecord({ isMutation, sequence: dna, typeAlgorithm });
+    return isMutation;
+  }
+
+  validParams(dna: string[]) {
     if (!dna?.length) throw new ErrorData({ message: EMPTY_DATA, code: 400 });
     if (!isValidDNAStrand(dna)) throw new ErrorData({ message: INVALID_DATA, code: 400 });
+  }
 
-    for (let x = 0; x < n; x++) {
-      for (let y = 0; y < n; y++) {
-        for (const [dx, dy] of directions) {
-          if (hasMutationInDirection({ dna, x, y, dx, dy })) return true;
-        }
-      }
-    }
-
-    return false;
+  createDNARecord(dnaRecord: {
+    sequence: string[];
+    isMutation: boolean;
+    typeAlgorithm: TypeAlgorithm;
+  }) {
+    const create = new CreateAdnRecordUseCase();
+    return create.exec(dnaRecord);
   }
 }
 

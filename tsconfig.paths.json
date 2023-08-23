@@ -13,7 +13,13 @@
       "@constants": ["./src/core/constants/index"],
       "@types": ["./src/core/types/index"],
       "@config/*": ["./src/core/config/*"],
-      "@mocks/*": ["./__tests__/mocks/*"]
+      "@tests/*": ["./__tests__/*"],
+      "@mocks/*": ["./__tests__/mocks/*"],
+      "@factories/*": ["./__tests__/mocks/factories/*"],
+      "@constantsTest/*": ["./__tests__/mocks/constants/*"],
+      "@makesTest/*": ["./__tests__/makes/*"],
+      "@valuesTest/*": ["./__tests__/mocks/values/*"],
+      "@utilsTest/*": ["./__tests__/utils/*"]
     }
   }
 }

@@ -30,7 +30,17 @@ const {
   API_VERSION: apiVersion = DEFAULT_API_VERSION,
   INITIAL_ROUTE: initialRoute = DEFAULT_INITIAL_ROUTE,
   SERVER_URL: serverUrl = DEFAULT_SERVER_URL,
+  DB_NAME: dbName = "",
+  DB_USER: dbUser = "",
+  DB_PASSWORD: dbPassword = "",
+  DB_HOST: dbHost = "localhost",
+  DB_PORT: dbPort = 5432,
 } = process.env;
+
+const user = encodeURIComponent(dbUser);
+const password = encodeURIComponent(dbPassword);
+
+const database = `postgres://${user}:${password}@${dbHost}:${dbPort}/${dbName}`;
 
 export default {
   port,
@@ -38,4 +48,5 @@ export default {
   apiVersion,
   initialRoute,
   serverUrl,
+  database,
 };
