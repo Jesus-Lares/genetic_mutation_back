@@ -20,6 +20,7 @@ module.exports = {
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
+    "import/no-extraneous-dependencies": "off",
     "class-methods-use-this": "off",
     "no-underscore-dangle": "off",
     "implicit-arrow-linebreak": "off",

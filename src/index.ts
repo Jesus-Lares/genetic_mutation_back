@@ -1,18 +1,25 @@
-/* eslint-disable no-restricted-syntax */
-import { hasMutationInDirection } from "@utils";
-import { directions } from "./core/constants";
+/* eslint-disable no-console */
+import http from "http";
+import env from "@config/env";
+import app from "./app";
 
-const hasMutation = (dna: string[]): boolean => {
-  const n = dna.length;
-  for (let x = 0; x < n; x++) {
-    for (let y = 0; y < n; y++) {
-      for (const [dx, dy] of directions) {
-        if (hasMutationInDirection({ dna, x, y, dx, dy })) return true;
-      }
-    }
-  }
+process.on("uncaughtException", (e) => {
+  console.log(e);
+  process.exit(1);
+});
 
-  return false;
-};
+process.on("unhandledRejection", (e) => {
+  console.log(e);
+  process.exit(1);
+});
 
-export default hasMutation;
+const port = Number(env.port);
+const { ipServer } = env;
+app.set("port", port);
+
+const httpServer = http.createServer(app);
+httpServer.listen(port, () => {
+  console.log(`server running in http://${ipServer}:${port}${env.initialRoute}`);
+});
+
+export default httpServer;
