@@ -11,6 +11,7 @@
     "lint": "eslint './src/**/*.ts'",
     "lint:fix": "eslint './src/**/*.ts' --fix",
     "clean": "rm -rf coverage src/**/*.js src/**/*.map",
+    "start": "node build/src/index.js",
     "build": "npm run clean -rf ./build && tsc --project ./",
     "test": "NODE_ENV=test && export NODE_OPTIONS='--max-old-space-size=4096' && jest --silent --detectOpenHandles --runInBand --no-cache",
     "test:windows": "set NODE_ENV=test && set NODE_OPTIONS=--max-old-space-size=4096 && jest --silent --detectOpenHandles --runInBand --no-cache",
