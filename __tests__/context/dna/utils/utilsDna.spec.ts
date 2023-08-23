@@ -1,6 +1,6 @@
-import { areCoordinatesValid, hasMutationInDirection } from "@src/context/dna/infra/utils";
+import { areCoordinatesValid, hasMutationInDirection } from "@context/dna/infra/utils";
 
-import { dnaWithMutation } from "@mocks/dna";
+import { dnaWithMutation } from "@mocks/constants/dna";
 
 describe("Utils Tests", () => {
   describe("areCoordinatesValid", () => {

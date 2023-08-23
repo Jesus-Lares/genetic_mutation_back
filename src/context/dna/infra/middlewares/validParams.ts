@@ -23,6 +23,7 @@ const validParams = (req: Request, res: Response, next: NextFunction) => {
           )
           .required(),
       }),
+    typeAlgorithm: Joi.string(),
   });
 
   return validation(req, res, next, schemaRules);

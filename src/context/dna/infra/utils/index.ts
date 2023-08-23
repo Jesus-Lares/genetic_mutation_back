@@ -1,4 +1,4 @@
-import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "../../domain/params";
+import { AreCoordinatesValidProps, HasMutationInDirectionProps } from "../../domain/Params";
 import { defaultPatternLength } from "../constants";
 
 /**
@@ -47,3 +47,10 @@ export function hasMutationInDirection({
 
   return count >= patternLength;
 }
+
+/**
+ * Checks for mutations in a single sequence.
+ * @param sequence The DNA table
+ * @returns True if a mutation is found, otherwise false
+ */
+export const checkSequence = (sequence: string): boolean => /A{4}|T{4}|C{4}|G{4}/.test(sequence);

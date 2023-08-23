@@ -12,6 +12,11 @@ const routes: Route[] = [
     method: EnumMethodRoute.POST,
     handler: [requestCatch(validParams), requestCatch(controller.hasMutation)],
   },
+  {
+    path: `${URL_BASE}/stats`,
+    method: EnumMethodRoute.GET,
+    handler: [requestCatch(controller.getStats)],
+  },
 ];
 
 export default routes;

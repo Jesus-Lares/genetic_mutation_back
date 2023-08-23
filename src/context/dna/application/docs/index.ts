@@ -1,2 +1,2 @@
-export * from "./schemas";
-export * from "./routes";
+export { default as postMutationSchema } from "./schemas";
+export { default as dnaRoutes } from "./routes";
