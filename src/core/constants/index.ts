@@ -1,8 +1,2 @@
-export const directions = [
-  [0, 1],
-  [1, 0],
-  [1, 1],
-  [1, -1],
-];
-
-export const defaultPatternLength = 4;
+export * from "./app";
+export { default as regex } from "./regex";

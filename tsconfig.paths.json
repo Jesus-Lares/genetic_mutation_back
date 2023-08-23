@@ -3,9 +3,23 @@
     "baseUrl": "./",
     "paths": {
       "@src/*": ["./src/*"],
+      "@context/*": ["./src/context/*"],
+      "@helpers/*": ["./src/core/helpers/*"],
       "@utils/*": ["./src/core/utils/*"],
       "@utils": ["./src/core/utils/index"],
-      "@mocks/*": ["./__tests__/mocks/*"]
+      "@errors/*": ["./src/core/errors/*"],
+      "@errors": ["./src/core/errors/index"],
+      "@router": ["./src/core/routes/index"],
+      "@constants": ["./src/core/constants/index"],
+      "@types": ["./src/core/types/index"],
+      "@config/*": ["./src/core/config/*"],
+      "@tests/*": ["./__tests__/*"],
+      "@mocks/*": ["./__tests__/mocks/*"],
+      "@factories/*": ["./__tests__/mocks/factories/*"],
+      "@constantsTest/*": ["./__tests__/mocks/constants/*"],
+      "@makesTest/*": ["./__tests__/makes/*"],
+      "@valuesTest/*": ["./__tests__/mocks/values/*"],
+      "@utilsTest/*": ["./__tests__/utils/*"]
     }
   }
 }
