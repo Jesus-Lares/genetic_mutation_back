@@ -1,0 +1,24 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+  before_script:
+    - cp .env.test .env
+    - docker-compose config
+    - docker-compose up -d
+    - npm install
+  script:
+    - npm run lint
+    - npm run test
+  after_script:
+    - docker-compose down
+  only:
+    - main
+    - development
+    - feat/action
