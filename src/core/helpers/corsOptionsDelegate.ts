@@ -7,9 +7,11 @@ const corsOptionsDelegate = (req: Request, callback: any) => {
     origin: boolean;
   }
   const allowlist = [
-    "http://localhost:3000",
-    `http://${env.ipServer}:3000`,
+    "http://localhost:5173",
+    `http://${env.ipServer}:5173`,
     `http://localhost:${env.port}`,
+    "http://geneticmutation.jesuslares.com",
+    "http://geneticmutation.azurewebsites.net",
   ];
 
   const corsOptions: ICorsOptions = { origin: false };

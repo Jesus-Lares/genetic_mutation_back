@@ -3,6 +3,7 @@ import swaggerUi from "swagger-ui-express";
 
 import env from "@config/env";
 import swaggerSetup from "@config/swagger";
+import cleanReqInputs from "@helpers/sanitizeRequestInput";
 import { ROUTE_DOCUMENTATION } from "@constants";
 
 import path from "path";
@@ -15,7 +16,7 @@ export default (router: Router): void => {
   });
   */
 
-  router.use("/api/v1", routesV1);
+  router.use("/api/v1", cleanReqInputs, routesV1);
 
   /*
   TODO: can be added to only be seen in development
