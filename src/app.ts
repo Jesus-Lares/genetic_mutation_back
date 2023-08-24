@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import express, { Application } from "express";
 
-import addRouter from "@router";
 import addPlugins from "@config/addPlugins";
 import connectDb from "@config/db";
+import addRouter from "./core/routes";
 
 import { NODE_ENV } from "./core/constants";
 
