@@ -25,14 +25,7 @@ module.exports = {
     "no-underscore-dangle": "off",
     "implicit-arrow-linebreak": "off",
     "import/no-unresolved": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        js: "never",
-        ts: "never",
-      },
-    ],
+    "import/extensions": "off",
   },
   settings: {
     "import/resolver": {

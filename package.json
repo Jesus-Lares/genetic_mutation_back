@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only ./src/index.ts",
     "dev:windows": "set NODE_ENV=development && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only ./src/index.ts",
     "prepare": "husky install && npx ts-patch install -s",
-    "lint": "eslint './src/**/*.ts'",
+    "lint": "eslint \"./src/**/*.ts\"",
     "lint:fix": "eslint './src/**/*.ts' --fix",
     "clean": "rm -rf coverage src/**/*.js src/**/*.map",
     "start": "node build/src/index.js",
