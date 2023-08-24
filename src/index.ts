@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import http from "http";
-import env from "@config/env";
 import app from "./app";
+import env from "./core/config/env";
 
 process.on("uncaughtException", (e) => {
   console.log(e);

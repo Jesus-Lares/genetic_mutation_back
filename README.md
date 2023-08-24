@@ -38,8 +38,8 @@ El ADN humano está compuesto por una secuencia de bases nitrogenadas (adenina, 
 
 ## Enlaces
 
-- [Sitio Web](https://www.tusitio.com) - Accede al sitio web del proyecto.
-- [Documentación](https://www.tusitio.com/documentation) - Consulta la documentación detallada del proyecto.
+- [Sitio Web](https://geneticmutation.jesuslares.com) - Accede al sitio web del proyecto.
+- [Documentación](https://geneticmutation.jesuslares.com/api/v1/documentation) - Consulta la documentación detallada del proyecto.
 
 ## Instrucciones de Instalación
 

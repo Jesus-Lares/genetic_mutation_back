@@ -51,7 +51,7 @@ const dnaRoutes = {
   [`${env.initialRoute}/stats`]: {
     get: {
       summary:
-        "Obtiene las estadisticas acerca de cuantas secuencias de ADN tienen mutación y el porcentaje",
+        "Obtiene las estadísticas acerca de cuantas secuencias de ADN tienen mutación y el porcentaje",
       tags: ["dna"],
       parameters: [
         {
@@ -64,7 +64,7 @@ const dnaRoutes = {
       responses: {
         200: {
           description:
-            "Retorna las estadisticas con los datos count_mutation, count_no_mutation y ratio.",
+            "Retorna las estadísticas con los datos count_mutation, count_no_mutation y ratio.",
           content: {
             "application/json": {
               schema: {
