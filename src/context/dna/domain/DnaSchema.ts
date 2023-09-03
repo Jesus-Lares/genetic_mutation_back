@@ -1,4 +1,5 @@
 import { Model, DataTypes, Sequelize } from "sequelize";
+import { DNA } from "./DNA";
 
 export const DNA_RECORD_TABLE = "dnaRecord";
 
@@ -9,8 +10,20 @@ export const DNARecordSchema = {
     primaryKey: true,
   },
   sequence: {
-    type: DataTypes.ARRAY(DataTypes.STRING),
+    type: DataTypes.STRING,
     allowNull: false,
+    get(this: Model<DNA>): string[] {
+      const sequence = this.getDataValue("sequence");
+      if (Array.isArray(sequence)) {
+        const convertSequence = sequence.join(" ");
+        return JSON.parse(convertSequence);
+      }
+      return JSON.parse(sequence);
+    },
+    set(this: Model<DNA>, value: string[]): void {
+      const sequence = JSON.stringify(value);
+      this.setDataValue("sequence", sequence as any);
+    },
   },
   isMutation: {
     type: DataTypes.BOOLEAN,
