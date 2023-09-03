@@ -22,7 +22,7 @@ export const connectDBTest = async (): Promise<Sequelize> => {
 
 export const clearDataBase = async (db: Sequelize, tables = tableNames): Promise<void> => {
   const promises = tables.map((tableName) => {
-    const query = `TRUNCATE TABLE public."${tableName}" RESTART IDENTITY CASCADE`;
+    const query = `DELETE FROM \`${tableName}\``;
     return db.query(query);
   });
   await Promise.allSettled(promises);
