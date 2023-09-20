@@ -40,7 +40,7 @@ const {
 const user = encodeURIComponent(dbUser);
 const password = encodeURIComponent(dbPassword);
 
-const database = `postgres://${user}:${password}@${dbHost}:${dbPort}/${dbName}`;
+const database = `mysql://${user}:${password}@${dbHost}:${dbPort}/${dbName}`;
 
 export default {
   port,

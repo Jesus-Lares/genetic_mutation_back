@@ -14,10 +14,10 @@ addRouter(app);
 if (process.env.NODE_ENV?.trim() !== NODE_ENV.test) {
   connectDb()
     .then(() => {
-      console.log("PostgreSQL connection of test has been established successfully.");
+      console.log("Connection of db has been established successfully.");
     })
-    .catch(() => {
-      console.error("Unable to connect of test to the database:");
+    .catch((e) => {
+      console.error("Unable to connect to the database");
     });
 }
 
